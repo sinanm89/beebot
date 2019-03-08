@@ -1,0 +1,2 @@
+# beebot
+discord bot
