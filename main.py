@@ -113,6 +113,8 @@ CLIENT_ID = TOKEN
 CLIENT_SECRET = SECRET
 REDIRECT_URI = 'https://beebot.rahatol.com/auth'
 
+
+discord_auth_give_url = "https://discordapp.com/api/oauth2/authorize?client_id=553390519997169665&permissions=0&redirect_uri=https%3A%2F%2Fbeebot.rahatol.com&response_type=code&scope=identify%20email%20connections%20guilds%20guilds.join%20gdm.join%20webhook.incoming%20bot%20rpc.notifications.read%20rpc.api%20rpc%20messages.read%20applications.builds.upload%20applications.builds.read%20applications.store.update%20applications.entitlements"
 def refresh_token(refresh_token):
   data = {
     'client_id': CLIENT_ID,
@@ -134,7 +136,6 @@ def main():
     # exchange_code()
 
     client = discord.Client()
-
     @client.event
     async def on_message(message):
         if message.content.startswith('$greet'):
