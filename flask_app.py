@@ -22,6 +22,15 @@ def main():
         app.logger.info('')
         return "Hello World!"
 
+    @app.route("/<filename>")
+    def hello(filename=None):
+        url_for('static', filename='style.css')
+        # import ipdb; ipdb.set_trace()
+        app.logger.info('filename : {0}'.format(filename))
+        if filename == "auth":
+            return render_template('index.html', name=name)
+        return '<html><body><h1>Thanks!</h1><body></html>'
+
     app.run(host=FLASK_HOST, port=FLASK_PORT)
 
 
